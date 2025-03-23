@@ -1,0 +1,36 @@
+.navbar {
+    background-color: #1f2937; /* Tailwind Gray-800 */
+    color: white;
+    padding: 0.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar h1 {
+    font-size: 1.5rem;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 1rem;
+    font-size: 1rem;
+  }
+  
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .logout-btn {
+    background-color: #dc2626; /* Tailwind Red-500 */
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .logout-btn:hover {
+    background-color: #b91c1c; /* Darker red */
+  }
+  

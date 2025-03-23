@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  frontend:
+    container_name: frontend
+    image: test/frontend:1.1
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+  backend:
+    container_name: backend
+    image: test/backend:1.1
+    build: ./backend
+    ports:
+      - "4000:4000"
+    environment:
+      - DB_URL=postgresql://postgres:1234@db:5432/blog
+    depends_on:
+      - db
+  db:
+    container_name: db
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=blog
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata: {}
